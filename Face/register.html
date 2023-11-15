@@ -16,20 +16,14 @@
             <button onclick="window.location.href='main.html'" style="font-size: 20px;">Back</button>
         </div>
         
-        <div style="position: absolute; top: 50px; left: 50px;">
-            <video id="video" width="320" height="240" autoplay></video>
-        </div>
-
-        <div>
-            <video>
-                
-            </video>
+        <div style="position: absolute; top: 150px; left: 150px; background-color: #666;">
+            <video id="video" width="600" height="500" autoplay></video>
         </div>
 
         <script>
             var video = document.getElementById('video');
 
-            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            if (navigator.mediaDevices.getUserMedia) {
                 navigator.mediaDevices.getUserMedia({ video: true })
                     .then(function(stream) {
                         video.srcObject = stream;
@@ -46,35 +40,12 @@
                 background-size: cover;
                 background-repeat: no-repeat;
             }
+
+            .camwin{
+                width: 500px;
+                height: 375px;
+                background-color: white;
+            }
         </style>
     </body>
 </html>
-
-<!-- <html>
-    <head>
-        <title>
-        Face Votering System
-        </title>
-    </head>
-
-    <body>
-        <h1 style="text-align: center; color: aliceblue;">Face Votering System</h1>
-        <hr>
-        <h2 style="text-align: center; font-size: 40;">Register</h2>
-        <div style="text-align: center;">
-        <form action="#">
-            <input type="text" name="username" placeholder="Enter your name" style="font-size: 30;"><br><br>
-        <button onclick="window.location.href='register.html'" style="background-color: green; color:aliceblue; font-size: 20px; padding: 10;">Register</button><br/><br>
-    </form>
-        <button onclick="window.location.href='main.html'" style="font-size: 20;">Back</button>
-    
-</div>
-    </body>
-    <style>
-        body {
-            background-image: url("vote.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-    </style>
-</html> -->
