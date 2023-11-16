@@ -2,8 +2,7 @@ Flask==2.0.2
 gunicorn
 mysql-connector-python==8.0.33
 cvzone
-
-torch==1.13.1
+torch
 torchvision
 xformers==0.0.16
 omegaconf==2.1.1
