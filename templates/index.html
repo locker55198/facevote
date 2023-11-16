@@ -13,7 +13,7 @@
             <button onclick="window.location.href='login.html'" style="background-color: green; font-size: 35px; padding: 20px; position: absolute; top: 400px; left: 46.6%;">Login</button><br>
         </div>
    
-        <img src="vote.jpg" alt="Vote Image" style="width: 100%; height: auto;">
+        <img src="{{ url_for('static', filename='vote.jpg') }}" alt="Vote Image" style="width: 100%; height: auto;">
     </body>
 
     <style>
