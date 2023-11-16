@@ -4,7 +4,7 @@
         <title>Face Votering System</title>
     </head>
 
-    <body style="background-image: url('{{ url_for('static', filename='images/vote.jpg') }}');">
+    <body>
         <h1 style="text-align: center; color: aliceblue;">Face Votering System</h1>
         <hr>
    
@@ -18,7 +18,10 @@
 
     <style>
         body {
-            background-color: #000;
+            background-image: url('{{ url_for('static', filename='images/vote.jpg') }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
     </style>
 </html>
