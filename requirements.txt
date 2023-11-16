@@ -3,7 +3,7 @@ gunicorn
 mysql-connector-python==8.0.33
 
 torch==1.13.1
-torchvision==0.14.1
+torchvision
 xformers==0.0.16
 omegaconf==2.1.1
 albumentations==1.3.0
