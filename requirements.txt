@@ -2,7 +2,7 @@ Flask==2.0.2
 gunicorn
 mysql-connector-python==8.0.33
 cvzone
-torch==1.13.1
+torch
 torchvision
 #xformers==0.0.16
 omegaconf==2.1.1
@@ -10,7 +10,7 @@ albumentations==1.3.0
 opencv-python
 imageio==2.9.0
 imageio-ffmpeg==0.4.2
-pytorch-lightning==1.4.2
+pytorch-lightning
 test-tube>=0.7.5
 streamlit==1.17.0
 einops==0.3.0
@@ -19,6 +19,6 @@ einops==0.3.0
 protobuf~=3.20.1
 torchmetrics
 transformers==4.19.2
-kornia==0.6.0
+kornia
 gradio
 ultralytics
