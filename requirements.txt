@@ -15,10 +15,10 @@ test-tube
 streamlit
 einops
 #git+https://github.com/openai/CLIP.git
-#git+https://github.com/ultralytics/ultralytics.git
 protobuf
 torchmetrics
 transformers
 kornia
 gradio
-ultralytics
+#ultralytics
+git+https://github.com/ultralytics/ultralytics.git
