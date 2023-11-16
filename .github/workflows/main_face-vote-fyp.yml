@@ -4,24 +4,13 @@
 
 name: Build and deploy Python app to Azure Web App - face-vote-fyp
 
-enabled: true
-image: paperspace/yolo:v1.01
-port: 7860
-command:
-  - python
-  - app-final.py
-env:
-  - name: GRADIO_SERVER_NAME
-    value: 0.0.0.0
-resources:
-  replicas: 1
-  instanceType: A100-80G
 
 on:
   push:
     branches:
       - main
   workflow_dispatch:
+
 
 jobs:
   build:
@@ -62,6 +51,19 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+      
+      enabled: true
+image: paperspace/yolo:v1.01
+port: 7860
+command:
+  - python
+  - app-final.py
+env:
+  - name: GRADIO_SERVER_NAME
+    value: 0.0.0.0
+resources:
+  replicas: 1
+  instanceType: A100-80G
     
     steps:
       - name: Download artifact from build job
