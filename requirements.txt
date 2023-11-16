@@ -20,5 +20,5 @@ torchmetrics
 transformers
 kornia
 gradio
-#ultralytics
-git+https://github.com/ultralytics/ultralytics.git
+ultralytics
+#git+https://github.com/ultralytics/ultralytics.git
