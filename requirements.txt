@@ -4,7 +4,7 @@ mysql-connector-python==8.0.33
 cvzone
 torch==1.13.1
 torchvision
-xformers==0.0.16
+#xformers==0.0.16
 omegaconf==2.1.1
 albumentations==1.3.0
 opencv-python
