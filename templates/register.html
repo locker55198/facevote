@@ -79,9 +79,11 @@
         </script>
 
         <style>
-            body {
-                background-color: #000; /* 设置背景颜色为黑色 */
-            }
-        </style>
+        body {
+            background-image: url('{{ url_for('static', filename='images/vote.jpg') }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
     </body>
 </html>
