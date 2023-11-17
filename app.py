@@ -19,10 +19,6 @@ def register():
 def login():
     return render_template('login.html')
 
-@app.route('/video_feed')
-def video_feed():
-    return Response(detect_objects(), mimetype='multipart/x-mixed-replace; boundary=frame')
-
 @app.route('/vote')
 def vote():
     return render_template('vote.html')
