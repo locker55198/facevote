@@ -14,5 +14,9 @@ def register():
 def login():
     return render_template('login.html')
 
+@app.route('/vote')
+def login():
+    return render_template('vote.html')
+
 if __name__ == '__main__':
     app.run()
