@@ -1,10 +1,5 @@
 import os
 from flask import (Flask, redirect, render_template, response, request, jsonify, send_from_directory, url_for)
-import cv2
-import math
-import time
-import cvzone
-import mysql.connector
 
 app = Flask(__name__)
 
