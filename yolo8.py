@@ -1,3 +1,4 @@
+from ultralytics import YOLO
 def detect_objects():
     confidence = 0.6
     cap = cv2.VideoCapture(0)  # For Webcam
