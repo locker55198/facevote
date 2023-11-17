@@ -74,7 +74,8 @@ def authenticate_user(username, image):
     cursor.close()
     cnx.close()
 
-    register:
+    register :
+    , methods=['GET', 'POST']
     if request.method == 'POST':
         username = request.form.get('username')
         image = request.files['image'].read()  # 獲取上傳的圖片文件並讀取其內容
@@ -82,6 +83,7 @@ def authenticate_user(username, image):
         return jsonify({'message': 'Registration successful'})
     
     login:
+    , methods=['GET', 'POST']
     if request.method == 'POST':
         username = request.form.get('username')
         image = request.files['image'].read()  # 獲取上傳的圖片文件並讀取其內容
