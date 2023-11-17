@@ -46,3 +46,8 @@ def detect_objects():
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
     cap.release()
+
+
+    @app.route('/video_feed')
+def video_feed():
+    return Response(detect_objects(), mimetype='multipart/x-mixed-replace; boundary=frame')
