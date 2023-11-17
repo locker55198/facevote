@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Face Votering System</title>
+        <title>Face Voting System</title>
     </head>
 
     <body>
-        <h1 style="text-align: center; color: aliceblue;">Face Votering System</h1>
+        <h1 style="text-align: center; color: aliceblue;">Face Voting System</h1>
         <hr>
         <h2 style="text-align: center; font-size: 40px;">Login</h2>
         <div>
-            <form action="#">
-                <button onclick="LoginImage()" style="background-color: green; color: aliceblue; font-size: 20px; padding: 10px; position: absolute; padding: 10px; top: 700px; left: 650px;">Login</button><br><br>
-            </form>
+            <button onclick="LoginImage()" style="background-color: green; color: aliceblue; font-size: 20px; padding: 10px; position: absolute; padding: 10px; top: 700px; left: 650px;">Login</button><br><br>
             <button onclick="location.href='/'" style="font-size: 20px; position: absolute; padding: 10px; top: 700px; left: 1000px;">Back</button>
-
-            <button onclick="location.href='/vote'" style="font-size: 20px; position: absolute; padding: 10px; top: 700px; left: 1500px;">GO</button>
         </div>
         
         <div style="position: absolute; top: 180px; left: 650px; background-color: #666;">
@@ -38,23 +34,23 @@
         }
 
         function LoginImage() {
-            // 捕获图像
+            // 捕獲圖像
             context.drawImage(video, 0, 0, canvas.width, canvas.height);
             var image = canvas.toDataURL('image/jpeg');
 
-            // 将图像发送到后端处理，这里使用了XMLHttpRequest
+            // 將圖像發送到後端處理，這裡使用了XMLHttpRequest
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'save_image.php', true);
+            xhr.open('POST', '/login', true);
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     var response = xhr.responseText;
                     if (response === "Login successful") {
-                        // 登录成功的处理逻辑
+                        // 登錄成功的處理邏輯
                         console.log('Login successful');
                         window.location.href = '/vote';
                     } else if (response === "Login failed") {
-                        // 登录失败的处理逻辑
+                        // 登錄失敗的處理邏輯
                         console.log('Login failed');
                     }
                 }
