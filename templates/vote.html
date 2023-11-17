@@ -7,13 +7,13 @@
     <body>
         <h1 style="text-align: center; color: aliceblue;">Face Votering System</h1>
         <hr>
-        <h2 style="text-align: center; font-size: 40px;">Please Select One Candidate</h2>
+        <h2 style="text-align: center; font-size: 40px; color: yellow;">Please Select One Candidate</h2>
         <div>
             <form action="#">
                 <table style="width:100%">
                     <tr>
-                      <th>Biden</th>
-                      <th>Obama</th>
+                      <th style="color: white; font-size: 50px;">Biden</th>
+                      <th style="color: white; font-size: 50px;">Obama</th>
                     </tr>
                     <tr style="height:300px">
                       <td style="text-align: center;">
@@ -34,7 +34,7 @@
                   </table>
             </form>
             <br>
-            <button onclick="vote()" style="font-size: 20px;">Submit</button>
+            <button onclick="vote()" style="font-size: 20px; style="font-size: 20px; position: absolute; padding: 10px; top: 800px; left: 900px;"">Submit</button>
         </div>
         
        
@@ -63,9 +63,6 @@
             background-image: url('{{ url_for('static', filename='images/vote.jpg') }}');
             background-size: cover;
             background-repeat: no-repeat;
-            }
-            table, th, td {
-            border: 1px solid black;
             }
         </style>
     </body>
