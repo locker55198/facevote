@@ -3,7 +3,6 @@ import cv2
 import math
 import time
 import cvzone
-from ultralytics import YOLO
 import mysql.connector
 
 app = Flask(__name__)
