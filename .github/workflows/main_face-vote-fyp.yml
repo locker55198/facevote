@@ -4,13 +4,11 @@
 
 name: Build and deploy Python app to Azure Web App - face-vote-fyp
 
-
 on:
   push:
     branches:
       - main
   workflow_dispatch:
-
 
 jobs:
   build:
@@ -51,7 +49,7 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-      
+    
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
@@ -68,5 +66,4 @@ jobs:
         with:
           app-name: 'face-vote-fyp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D6184EE0F93445FF9FD3398D99BC19B0 }}
-
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_782B5DFB666744DDA0C5380D1D1B5385 }}
