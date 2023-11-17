@@ -22,3 +22,4 @@ kornia
 gradio
 ultralytics
 git+https://github.com/ultralytics/ultralytics.git
+pyodbc
