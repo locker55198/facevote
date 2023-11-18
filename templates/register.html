@@ -10,7 +10,7 @@
     <h2 style="text-align: center; font-size: 40px;">Register</h2>
     <div style="text-align: center;">
         <form id="registerForm" action="/register" method="POST">
-            <input type="text" id="username" name="username" placeholder="Enter your name" style="font-size: 30px;"><br><br>
+            <input type="text" id="name" name="name" placeholder="Enter your name" style="font-size: 30px;"><br><br>
             <button type="submit" style="background-color: green; color: aliceblue; font-size: 20px; padding: 10px;">Register</button><br><br>
         </form>
         <button type="button" onclick="location.href='/'" style="font-size: 20px;">Back</button>
@@ -48,7 +48,7 @@
             var image = canvas.toDataURL('image/jpeg');
 
             // 獲取使用者輸入的姓名
-            var username = document.getElementById('username').value;
+            var name = document.getElementById('name').value;
 
             // 將圖像顯示在圖像元素中
             var capturedImage = document.getElementById('capturedImage');
@@ -60,7 +60,7 @@
             // 將圖像和姓名作為表單數據發送到後端進行處理
             var form = new FormData(document.getElementById('registerForm'));
             form.append('image', image);
-            form.append('username', username);
+            form.append('name', name);
             var xhr = new XMLHttpRequest();
             xhr.open('POST', '/register', true);
             xhr.onreadystatechange = function() {
