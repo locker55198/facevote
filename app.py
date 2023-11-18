@@ -5,6 +5,15 @@ from flask import (Flask, redirect, render_template, request, jsonify, send_from
 
 app = Flask(__name__)
 
+def get_db_connection():
+    conn = mysql.connector.connect(
+        host='fyp.mysql.database.azure.com',
+        user='ming',
+        password='P@ssw0rd',
+        database='fyp'
+    )
+    return conn
+
 @app.route('/')
 def index():
    print('Request for index page received')
@@ -17,12 +26,7 @@ def favicon():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    if request.method == 'POST':
-        username = request.form.get('name')
-        image = request.files['image'].read()  # 獲取上傳的圖片文件並讀取其內容
-        save_to_database(name, image)  # 假設有一個名為save_to_database的函數來處理數據保存
-        return jsonify({'message': 'Registration successful'})
-
+    return render_template('register.html')
 @app.route('/login')
 def login():
     return render_template('login.html')
