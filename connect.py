@@ -7,4 +7,4 @@ def get_db_connection():
         password='P@ssw0rd',
         database='fyp'
     )
-    return conn
+    return connect
