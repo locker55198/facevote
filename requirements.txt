@@ -1,5 +1,5 @@
-Flask==2.0.2
-gunicorn
+Django
+whitenoise
 mysql-connector-python==8.0.33
 cvzone
 torch
