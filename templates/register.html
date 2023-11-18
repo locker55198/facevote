@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Face Votering System</title>
+    </head>
+
+    <body>
+        <h1 style="text-align: center; color: aliceblue;">Face Votering System</h1>
+        <hr>
+        <h2 style="text-align: center; font-size: 40px;">Register</h2>
+        <div style="text-align: center;">
+            <form action="/register" method="POST">
+                <input type="text" id="username" name="username" placeholder="Enter your name" style="font-size: 30px;"><br><br>
+                <button type="submit" style="background-color: green; color: aliceblue; font-size: 20px; padding: 10px;">Register</button><br><br>
+            </form>
+            <button onclick="location.href='/'" style="font-size: 20px;">Back</button>
+        </div>
+        
+        <div style="position: absolute; top: 150px; left: 150px; background-color: #666;">
+            <video id="video" width="600" height="500" autoplay></video>
+            <br>
+        </div>
+        <button onclick="captureImage()" style="background-color: green; color: aliceblue; font-size: 20px; position: absolute; padding: 10px; top: 670px; left: 150px;">Capture</button>
+
+        <script>
+            var video = document.getElementById('video');
+            var canvas = document.createElement('canvas');
+            var context = canvas.getContext('2d');
+
+            if (navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(function(stream) {
+                        video.srcObject = stream;
+                    })
+                    .catch(function(error) {
+                        console.log('No Cam：', error);
+                    });
+            }
+
+            function captureImage() {
+                context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                var image = canvas.toDataURL('image/jpeg');
+
+                // 将图像作为表单数据发送到后端进行处理
+                var form = new FormData();
+                form.append('image', image);
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/save_image', true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        console.log('图像已保存到数据库');
+                    }
+                };
+                xhr.send(form);
+            }
+        </script>
+
+        <style>
+            body {
+                background-image: url('{{ url_for('static', filename='images/vote.jpg') }}');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        </style>
+    </body>
+</html>
