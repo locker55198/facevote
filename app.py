@@ -5,15 +5,6 @@ from flask import (Flask, redirect, render_template, request, jsonify, send_from
 
 app = Flask(__name__)
 
-def get_db_connection():
-    conn = mysql.connector.connect(
-        host='fyp.mysql.database.azure.com',
-        user='ming',
-        password='P@ssw0rd',
-        database='fyp'
-    )
-    return conn
-
 @app.route('/')
 def index():
    print('Request for index page received')
@@ -27,6 +18,7 @@ def favicon():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     return render_template('register.html')
+    
 @app.route('/login')
 def login():
     return render_template('login.html')
