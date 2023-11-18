@@ -15,9 +15,13 @@ def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
-    return render_template('register.html')
+    if request.method == 'POST':
+        username = request.form.get('username')
+        image = request.files['image'].read()  # 獲取上傳的圖片文件並讀取其內容
+        save_to_database(username, image)  # 假設有一個名為save_to_database的函數來處理數據保存
+        return jsonify({'message': 'Registration successful'})
 
 @app.route('/login')
 def login():
