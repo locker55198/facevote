@@ -1,9 +1,9 @@
 import os
 
 from flask import (Flask, redirect, render_template, request, jsonify, send_from_directory, url_for)
+from database import save_to_database
 
 app = Flask(__name__)
-
 
 @app.route('/')
 def index():
