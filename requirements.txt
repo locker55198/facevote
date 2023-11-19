@@ -2,5 +2,7 @@ Flask==2.0.2
 gunicorn
 mysql-connector-python==8.0.33
 cvzone
-opencv-python
-ultralytics
+onnxruntime
+waitress
+pillow
+numpy
