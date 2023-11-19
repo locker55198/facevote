@@ -1,5 +1,5 @@
 import os
-from yolo8 import video_feed
+from yolo8 import detect_objects
 from flask import (Flask, redirect, render_template, request, jsonify, send_from_directory, url_for)
 
 
