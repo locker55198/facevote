@@ -2,8 +2,6 @@ Flask==2.0.2
 gunicorn
 mysql-connector-python==8.0.33
 cvzone
-torch
-torchvision
 mediapipe
 omegaconf
 albumentations
@@ -14,12 +12,10 @@ pytorch-lightning
 test-tube
 streamlit
 einops
-git+https://github.com/openai/CLIP.git
 protobuf
 torchmetrics
 transformers
 kornia
 gradio
 ultralytics
-git+https://github.com/ultralytics/ultralytics.git
 pyodbc
