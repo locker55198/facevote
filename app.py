@@ -1,5 +1,5 @@
 import os
-from connect import get_db_connection
+from yolo8 import video_feed
 from flask import (Flask, redirect, render_template, request, jsonify, send_from_directory, url_for)
 
 
@@ -26,6 +26,10 @@ def login():
 @app.route('/vote')
 def vote():
     return render_template('vote.html')
+
+@app.route('/video_feed')
+def video_feed():
+    return Response(detect_objects(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 if __name__ == '__main__':
