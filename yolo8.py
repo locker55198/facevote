@@ -5,7 +5,7 @@ def detect_objects():
     cap.set(3, 640)
     cap.set(4, 480)
     
-    model = YOLO("models/best.pt")
+    model = YOLO("model/best.pt")
 
     classNames = ["fake", "real"]
 
