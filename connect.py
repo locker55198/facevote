@@ -2,9 +2,9 @@ import mysql.connector
 
 def get_db_connection():
     conn = mysql.connector.connect(
-        host='127.0.0.1',
-        user='root',
-        password='password',
+        host='fyp.mysql.database.azure.com',
+        user='ming',
+        password='P@ss0wrd',
         database='fyp'
     )
     return conn
