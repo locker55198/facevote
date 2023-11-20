@@ -75,7 +75,7 @@ def favicon():
 
 @app.route('/register')
 def register():
-    return render_template('register.html', video_feed=detect_objects())
+    return Response(detect_objects(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 @app.route('/login')
 def login():
