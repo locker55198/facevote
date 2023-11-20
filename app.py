@@ -11,6 +11,7 @@ import numpy as np
 import json
 import onnxruntime as ort
 from ultralytics import YOLO
+from connect import 
 
 app = Flask(__name__)
 
