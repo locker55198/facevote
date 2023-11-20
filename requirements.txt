@@ -9,3 +9,6 @@ numpy
 opencv-python
 ultralytics
 git+https://github.com/ultralytics/ultralytics.git
+torch
+torchvision
+mediapipe
