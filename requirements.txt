@@ -6,3 +6,4 @@ onnxruntime
 waitress
 pillow
 numpy
+opencv-python
