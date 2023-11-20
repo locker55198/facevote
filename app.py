@@ -86,7 +86,8 @@ def register():
         conn.commit()
         cursor.close()
         conn.close()
-        return 'Registration successful'
+        flash('Registration successful', 'success') 
+        return redirect(url_for('index'))
 
     return Response(detect_objects(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
