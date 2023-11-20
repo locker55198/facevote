@@ -1,20 +1,18 @@
 import os
+
 from flask import Flask, redirect, render_template, request, jsonify, send_from_directory, url_for
 import cv2
 import math
 import time
 import cvzone
+from waitress import serve
 from PIL import Image
 import numpy as np
 import json
-from waitress import serve
+import onnxruntime as ort
+from ultralytics import YOLO
 
 app = Flask(__name__)
-
-class YOLO:
-    def __init__(self, model_path):
-        # 初始化YOLO模型
-        # ...
 
 def detect_objects():
     confidence = 0.6
