@@ -1,5 +1,4 @@
 import os
-
 from flask import Flask, redirect, render_template, request, jsonify, send_from_directory, url_for, Response
 import cv2
 import math
