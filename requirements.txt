@@ -1,6 +1,6 @@
-Flask==2.0.2
+Flask
 gunicorn
-mysql-connector-python==8.0.33
+mysql-connector-python
 cvzone
 onnxruntime
 waitress
