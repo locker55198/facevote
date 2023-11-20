@@ -89,6 +89,7 @@ def register():
         flash('Registration successful', 'success') 
         return redirect(url_for('index'))
 
+    return render_template('register.html')
     return Response(detect_objects(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 @app.route('/login')
