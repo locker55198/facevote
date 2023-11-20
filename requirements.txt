@@ -7,3 +7,4 @@ waitress
 pillow
 numpy
 opencv-python
+ultralytics
