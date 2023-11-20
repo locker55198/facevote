@@ -73,8 +73,21 @@ def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
+    if request.method == 'POST':
+        name = request.form['name']
+        image = request.files['image'].read()
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        # 將姓名和圖片插入到資料庫
+        sql = "INSERT INTO users (name, image) VALUES (%s, %s)"
+        cursor.execute(sql, (name, image))
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return 'Registration successful'
+
     return Response(detect_objects(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 @app.route('/login')
