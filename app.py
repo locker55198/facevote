@@ -81,7 +81,7 @@ def register():
         conn = get_db_connection()
         cursor = conn.cursor()
         # 將姓名和圖片插入到資料庫
-        sql = "INSERT INTO users (name, image) VALUES (%s, %s)"
+        sql = "INSERT INTO facevote (name, image) VALUES (%s, %s)"
         cursor.execute(sql, (name, image))
         conn.commit()
         cursor.close()
